@@ -18,3 +18,10 @@ pm.test('return 5', function(){
   pm.expect(books.length).to.eql(5);
 })
 ```
+
+
+```
+const moment =require('moment');
+const data = _.result(pm,'response.json')
+pm.expect(moment(data.createAt).format("MM/DD/YYYY")).to.eql(moment().format('MM/DD/YYYY'))
+```
