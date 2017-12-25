@@ -25,3 +25,14 @@ const moment =require('moment');
 const data = _.result(pm,'response.json')
 pm.expect(moment(data.createAt).format("MM/DD/YYYY")).to.eql(moment().format('MM/DD/YYYY'))
 ```
+## 5. Collections
+### 9 Refactor: Loop Over Users
+```
+const users = data.users;
+const user = _.sample(users);
+
+pm.globals.set("email",user.email);
+pm.globals.set("firstName",user.firstName);
+pm.globals.set("lastName",user.lastName);
+```
+
